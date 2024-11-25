@@ -8,6 +8,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.11.00"
+# ML kit Code Scanner Version
 playServicesMlkitDocumentScanner = "16.0.0-beta1"
 
 [libraries]
