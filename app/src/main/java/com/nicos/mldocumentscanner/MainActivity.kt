@@ -1,6 +1,9 @@
 package com.nicos.mldocumentscanner
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -20,10 +23,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.FileProvider
+import androidx.core.net.toFile
 import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions
 import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.RESULT_FORMAT_JPEG
 import com.google.mlkit.vision.documentscanner.GmsDocumentScannerOptions.RESULT_FORMAT_PDF
@@ -32,9 +38,8 @@ import com.google.mlkit.vision.documentscanner.GmsDocumentScanning
 import com.google.mlkit.vision.documentscanner.GmsDocumentScanningResult
 import com.nicos.mldocumentscanner.ui.theme.MLDocumentScannerTheme
 
+
 class MainActivity : ComponentActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,6 +50,24 @@ class MainActivity : ComponentActivity() {
                 ) { innerPadding ->
                     Scanner(innerPadding = innerPadding)
                 }
+            }
+        }
+    }
+
+    private fun openPdfWithIntent(pdfUri: Uri) {
+        val uri = FileProvider.getUriForFile(
+            this,
+            "${applicationContext.packageName}.provider",
+            pdfUri.toFile()
+        )
+        Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(uri, "application/pdf")
+            flags = Intent.FLAG_ACTIVITY_NO_HISTORY
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            try {
+                startActivity(this)
+            } catch (e: Exception) {
+                Log.d("exception", e.message ?: "error")
             }
         }
     }
@@ -61,24 +84,31 @@ class MainActivity : ComponentActivity() {
                 if (result.resultCode == RESULT_OK) {
                     val data =
                         GmsDocumentScanningResult.fromActivityResultIntent(result.data)
+                    /**
+                     * Option 1 to show the pdf as image uri
+                     * */
                     data?.pages?.let { pages ->
                         for (page in pages) {
                             val imageUri = page.imageUri
                         }
                     }
+                    /**
+                     * Option 1 to show the pdf as pdf uri
+                     * */
                     data?.pdf?.let { pdf ->
                         val pdfUri = pdf.uri
                         val pageCount = pdf.pageCount
+                        openPdfWithIntent(pdfUri)
                     }
                 }
             }
 
-        val options = GmsDocumentScannerOptions.Builder()
-            .setGalleryImportAllowed(false)
-            .setPageLimit(2)
-            .setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
-            .setScannerMode(SCANNER_MODE_FULL)
-            .build()
+        val options = GmsDocumentScannerOptions.Builder().apply {
+            setGalleryImportAllowed(false)
+            setPageLimit(2)
+            setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
+            setScannerMode(SCANNER_MODE_FULL)
+        }.build()
         val scanner = GmsDocumentScanning.getClient(options)
 
         Column(
@@ -103,7 +133,9 @@ class MainActivity : ComponentActivity() {
                                 IntentSenderRequest.Builder(intentSender).build()
                             )
                         }
-                        .addOnFailureListener { }
+                        .addOnFailureListener {
+                            Log.d("exception", "error")
+                        }
                 }
             )
         }
