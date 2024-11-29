@@ -30,7 +30,9 @@ ext {
     playServicesMlkitDocumentScanner = "16.0.0-beta1"
 }
 
-implementation("com.google.android.gms:play-services-mlkit-document-scanner:$playServicesMlkitDocumentScanner")
+dependencies {
+    implementation("com.google.android.gms:play-services-mlkit-document-scanner:$playServicesMlkitDocumentScanner")
+}
 ```
 
 ### libs.versions.toml
