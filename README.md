@@ -9,7 +9,7 @@ Minimum SDK version: 28 <br />
 Kotlin version: 2.1.0 <br />
 Gradle version: 8.7.2 <br />
 
-## Step 1
+## Step 1 - Add the library
 
 ### Groovy
 
