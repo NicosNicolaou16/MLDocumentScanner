@@ -6,6 +6,23 @@ Minimum SDK version: 28 <br />
 Kotlin version: 2.1.0 <br />
 Gradle version: 8.7.2 <br />
 
+
+## Step 1
+
+```libs
+playServicesMlkitDocumentScanner = "16.0.0-beta1"
+
+play-services-mlkit-document-scanner = { group = "com.google.android.gms", name = "play-services-mlkit-document-scanner", version.ref = "playServicesMlkitDocumentScanner" }
+```
+
+```Kotlin
+
+dependencies {
+    // ML Kit
+    implementation(libs.play.services.mlkit.document.scanner)
+}
+```
+
 ## Check my article
 
 
