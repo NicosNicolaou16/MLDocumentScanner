@@ -92,11 +92,12 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     /**
-                     * Option 1 to show the pdf as pdf uri
+                     * Option 2 to show the pdf as pdf uri
                      * */
                     data?.pdf?.let { pdf ->
                         val pdfUri = pdf.uri
                         val pageCount = pdf.pageCount
+                        // handle pdf uri and open it via Intent
                         openPdfWithIntent(pdfUri)
                     }
                 }
