@@ -1,7 +1,7 @@
 # ML Document Scanner
 
 This project shows the implementation for the Machine Learning Document Scanner. The sample project
-contains a button, open the camera and scan the document, and using the `Intent` to show the pdf
+contains a button, open the camera and scan the document, and using the `Intent` to open and preview the pdf
 file.
 
 Target SDK version: 35 <br />
