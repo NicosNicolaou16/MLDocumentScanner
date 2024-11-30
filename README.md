@@ -1,13 +1,13 @@
 # ML Document Scanner
 
 This project shows the implementation for the Machine Learning Document Scanner. The sample project
-contains a button, open the camera and scan the document, and using the `Intent` to open and preview the pdf
+contains a button, open the camera and scan the document, and using the `Intent` to open and preview
+the pdf
 file.
 
-Target SDK version: 35 <br />
-Minimum SDK version: 28 <br />
-Kotlin version: 2.1.0 <br />
-Gradle version: 8.7.2 <br />
+> [!IMPORTANT]  
+> Check my article :point_right: [Machine Learning Document (PDF) Scanner in Android - Medium]() :
+> point_left: <br />
 
 ## Step 1 - Add the library
 
@@ -56,11 +56,11 @@ dependencies {
 
 ```kotlin
 val options = GmsDocumentScannerOptions.Builder().apply {
-            setGalleryImportAllowed(false)
-            setPageLimit(2)
-            setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
-            setScannerMode(SCANNER_MODE_FULL)
-        }.build()
+    setGalleryImportAllowed(false)
+    setPageLimit(2)
+    setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
+    setScannerMode(SCANNER_MODE_FULL)
+}.build()
 ```
 
 ## Step 3 - Main Implementation
@@ -97,7 +97,7 @@ fun Scanner(
                 }
             }
         }
-    
+
     // Other Code Here - UI
 }
 ```
@@ -112,34 +112,39 @@ fun Scanner(
     innerPadding: PaddingValues
 ) {
     //Other Code Here
-    
-        ElevatedButton(
-            content = {
-                Text(
-                    text = stringResource(id = R.string.scan),
-                    style = TextStyle(fontSize = 21.sp)
-                )
-            },
-            modifier = Modifier.size(height = 70.dp, width = 250.dp),
-            onClick = {
-                /**
-                 * start the scanner
-                 * */
-                scanner.getStartScanIntent(this@MainActivity)
-                    .addOnSuccessListener { intentSender ->
-                        scannerLauncher.launch(
-                            IntentSenderRequest.Builder(intentSender).build()
-                        )
-                    }
-                    .addOnFailureListener {
-                        Log.d("exception", "error")
-                    }
-            }
-        )
-    }
+
+    ElevatedButton(
+        content = {
+            Text(
+                text = stringResource(id = R.string.scan),
+                style = TextStyle(fontSize = 21.sp)
+            )
+        },
+        modifier = Modifier.size(height = 70.dp, width = 250.dp),
+        onClick = {
+            /**
+             * start the scanner
+             * */
+            scanner.getStartScanIntent(this@MainActivity)
+                .addOnSuccessListener { intentSender ->
+                    scannerLauncher.launch(
+                        IntentSenderRequest.Builder(intentSender).build()
+                    )
+                }
+                .addOnFailureListener {
+                    Log.d("exception", "error")
+                }
+        }
+    )
+}
 ```
 
-## Check my article
+## Versioning
+
+Target SDK version: 35 <br />
+Minimum SDK version: 28 <br />
+Kotlin version: 2.1.0 <br />
+Gradle version: 8.7.2 <br />
 
 ## References
 
