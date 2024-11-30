@@ -8,6 +8,11 @@ file. <br />
 > [!IMPORTANT]  
 > Check my article :point_right: [Machine Learning Document (PDF) Scanner in Android - Medium]() :point_left: <br />
 
+# Examples
+<p align="left">
+  <a title="simulator_image"><img src="examples/example_gif.gif" height="500" width="200"></a>
+</p>
+
 ## Step 1 - Add the library
 
 ### Groovy
