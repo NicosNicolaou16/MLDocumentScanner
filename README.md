@@ -25,7 +25,7 @@ dependencies {
 
 ### Kotlin DSL
 
-```Kotlin
+```kotlin
 ext {
     playServicesMlkitDocumentScanner = "16.0.0-beta1"
 }
@@ -45,7 +45,7 @@ playServicesMlkitDocumentScanner = "16.0.0-beta1"
 play-services-mlkit-document-scanner = { group = "com.google.android.gms", name = "play-services-mlkit-document-scanner", version.ref = "playServicesMlkitDocumentScanner" }
 ```
 
-```Kotlin
+```kotlin
 dependencies {
     // ML Kit
     implementation(libs.play.services.mlkit.document.scanner)
