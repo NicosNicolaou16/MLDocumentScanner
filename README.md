@@ -52,6 +52,22 @@ dependencies {
 }
 ```
 
+## Step 2 - Setup the Builder
+
+```kotlin
+val options = GmsDocumentScannerOptions.Builder().apply {
+            setGalleryImportAllowed(false)
+            setPageLimit(2)
+            setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
+            setScannerMode(SCANNER_MODE_FULL)
+        }.build()
+```
+
+## Step 3 - Main Implementation
+```kotlin
+
+```
+
 ## Check my article
 
 ## References
