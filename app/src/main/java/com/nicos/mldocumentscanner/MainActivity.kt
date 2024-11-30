@@ -127,6 +127,9 @@ class MainActivity : ComponentActivity() {
                 },
                 modifier = Modifier.size(height = 70.dp, width = 250.dp),
                 onClick = {
+                    /**
+                     * start the scanner
+                     * */
                     scanner.getStartScanIntent(this@MainActivity)
                         .addOnSuccessListener { intentSender ->
                             scannerLauncher.launch(
