@@ -64,8 +64,79 @@ val options = GmsDocumentScannerOptions.Builder().apply {
 ```
 
 ## Step 3 - Main Implementation
-```kotlin
 
+```kotlin
+@Composable
+fun Scanner(
+    innerPadding: PaddingValues
+) {
+    /**
+     * registerForActivityResult for Activity/Fragment instead of the rememberLauncherForActivityResult (For Compose)
+     * */
+    val scannerLauncher =
+        rememberLauncherForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val data =
+                    GmsDocumentScanningResult.fromActivityResultIntent(result.data)
+                /**
+                 * Option 1 to show the pdf as image uri
+                 * */
+                data?.pages?.let { pages ->
+                    for (page in pages) {
+                        val imageUri = page.imageUri
+                    }
+                }
+                /**
+                 * Option 2 to show the pdf as pdf uri
+                 * */
+                data?.pdf?.let { pdf ->
+                    val pdfUri = pdf.uri
+                    val pageCount = pdf.pageCount
+                    // handle pdf uri and open it via Intent
+                    openPdfWithIntent(pdfUri)
+                }
+            }
+        }
+    
+    // Other Code Here - UI
+}
+```
+
+```kotlin
+val scanner = GmsDocumentScanning.getClient(options)
+```
+
+```kotlin
+@Composable
+fun Scanner(
+    innerPadding: PaddingValues
+) {
+    //Other Code Here
+    
+        ElevatedButton(
+            content = {
+                Text(
+                    text = stringResource(id = R.string.scan),
+                    style = TextStyle(fontSize = 21.sp)
+                )
+            },
+            modifier = Modifier.size(height = 70.dp, width = 250.dp),
+            onClick = {
+                /**
+                 * start the scanner
+                 * */
+                scanner.getStartScanIntent(this@MainActivity)
+                    .addOnSuccessListener { intentSender ->
+                        scannerLauncher.launch(
+                            IntentSenderRequest.Builder(intentSender).build()
+                        )
+                    }
+                    .addOnFailureListener {
+                        Log.d("exception", "error")
+                    }
+            }
+        )
+    }
 ```
 
 ## Check my article
