@@ -3,7 +3,7 @@
 This project shows the implementation for the Machine Learning Document Scanner. The sample project
 contains a button, open the camera and scan the document, and using the `Intent` to open and preview
 the pdf
-file. <br />
+file.
 
 > [!IMPORTANT]  
 > Check my article :point_right: [Machine Learning Document (PDF) Scanner in Android - Medium](https://medium.com/@nicosnicolaou/machine-learning-document-pdf-scanner-in-android-8ed185331fa4) :point_left: <br />
