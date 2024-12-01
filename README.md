@@ -6,7 +6,7 @@ the pdf
 file. <br />
 
 > [!IMPORTANT]  
-> Check my article :point_right: [Machine Learning Document (PDF) Scanner in Android - Medium]() :point_left: <br />
+> Check my article :point_right: [Machine Learning Document (PDF) Scanner in Android - Medium](https://medium.com/@nicosnicolaou/machine-learning-document-pdf-scanner-in-android-8ed185331fa4) :point_left: <br />
 
 # Examples
 <p align="left">
