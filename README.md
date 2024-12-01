@@ -58,6 +58,8 @@ dependencies {
 
 ## Step 2 - Setup the Builder
 
+### Builder Configuration
+
 ```kotlin
 val options = GmsDocumentScannerOptions.Builder().apply {
     setGalleryImportAllowed(false)
@@ -68,6 +70,8 @@ val options = GmsDocumentScannerOptions.Builder().apply {
 ```
 
 ## Step 3 - Main Implementation
+
+### Get the PDF URI
 
 ```kotlin
 @Composable
@@ -106,9 +110,13 @@ fun Scanner(
 }
 ```
 
+### Set the Builder Configuration
+
 ```kotlin
 val scanner = GmsDocumentScanning.getClient(options)
 ```
+
+### UI
 
 ```kotlin
 @Composable
