@@ -155,8 +155,8 @@ fun Scanner(
 
 Target SDK version: 35 <br />
 Minimum SDK version: 28 <br />
-Kotlin version: 2.1.0 <br />
-Gradle version: 8.7.2 <br />
+Kotlin version: 2.1.10 <br />
+Gradle version: 8.8.0 <br />
 
 ## References
 
