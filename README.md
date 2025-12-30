@@ -19,7 +19,7 @@ file.
 
 ```groovy
 ext {
-    playServicesMlkitDocumentScanner = "16.0.0-beta1"
+    playServicesMlkitDocumentScanner = "16.0.0"
 }
 
 dependencies {
@@ -31,7 +31,7 @@ dependencies {
 
 ```kotlin
 ext {
-    playServicesMlkitDocumentScanner = "16.0.0-beta1"
+    playServicesMlkitDocumentScanner = "16.0.0"
 }
 
 dependencies {
@@ -43,7 +43,7 @@ dependencies {
 
 ```toml
 [version]
-playServicesMlkitDocumentScanner = "16.0.0-beta1"
+playServicesMlkitDocumentScanner = "16.0.0"
 
 [libraries]
 play-services-mlkit-document-scanner = { group = "com.google.android.gms", name = "play-services-mlkit-document-scanner", version.ref = "playServicesMlkitDocumentScanner" }
@@ -155,8 +155,8 @@ fun Scanner(
 
 Target SDK version: 36 <br />
 Minimum SDK version: 29 <br />
-Kotlin version: 2.2.0 <br />
-Gradle version: 8.12.0 <br />
+Kotlin version: 2.3.0 <br />
+Gradle version: 8.13.2 <br />
 
 ## References
 
