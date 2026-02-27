@@ -84,7 +84,7 @@ class MainActivity : ComponentActivity() {
                     val data =
                         GmsDocumentScanningResult.fromActivityResultIntent(result.data)
                     /**
-                     * Option 1 to show the pdf as image uri
+                     * Option 1 to show the PDF as image uri
                      * */
                     data?.pages?.let { pages ->
                         for (page in pages) {
@@ -92,7 +92,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     /**
-                     * Option 2 to show the pdf as pdf uri
+                     * Option 2 to show the PDF as PDF uri
                      * */
                     data?.pdf?.let { pdf ->
                         val pdfUri = pdf.uri

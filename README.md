@@ -1,17 +1,43 @@
 # ML Document Scanner
 
-This project shows the implementation for the Machine Learning Document Scanner. The sample project
-contains a button, open the camera and scan the document, and using the `Intent` to open and preview
-the pdf
-file.
+[![Linktree](https://img.shields.io/badge/linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/nicos_nicolaou)
+[![Site](https://img.shields.io/badge/Site-blue?style=for-the-badge&label=Web)](https://nicosnicolaou16.github.io/)
+[![X](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://twitter.com/nicolaou_nicos)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/nicos-nicolaou-a16720aa)
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@nicosnicolaou)
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://www.youtube.com/@nicosnicolaou16)
+[![Google Developer Profile](https://img.shields.io/badge/Developer_Profile-blue?style=for-the-badge&label=Google)](https://g.dev/nicolaou_nicos)
+
+This project demonstrates the implementation of the **Google ML Kit Document Scanner API** in Android using Jetpack Compose. It provides a seamless interface to scan physical documents, digitize them, and handle the resulting PDF or JPEG files.
 
 > [!IMPORTANT]  
-> Check my article :point_right: [Machine Learning Document (PDF) Scanner in Android - Medium](https://medium.com/@nicosnicolaou/machine-learning-document-pdf-scanner-in-android-8ed185331fa4) :point_left: <br />
+> Read the full technical guide here:  
+> 👉 **[Machine Learning Document (PDF) Scanner in Android - Medium](https://medium.com/@nicosnicolaou/machine-learning-document-pdf-scanner-in-android-8ed185331fa4)** 👈
 
-# Example
+## ✨ Features
+
+*   **High-Quality Scanning:** Leverages Google's ML Kit for advanced edge detection and perspective correction.
+*   **Multi-Format Support:** Export scans as high-quality **JPEG** images or as a multi-page **PDF**.
+*   **Customizable UI:** Configure page limits, gallery imports, and scanner modes (Base, Filter, Full).
+*   **Compose Integration:** Uses `rememberLauncherForActivityResult` for a clean, reactive implementation in Jetpack Compose.
+*   **Intent Preview:** Automatically handles PDF URI results to open and preview documents in external viewers.
+
+## 🛠️ Tech Stack
+
+- **UI:** [Jetpack Compose](https://developer.android.com/develop/ui/compose)
+- **ML Engine:** [Google ML Kit Document Scanner](https://developers.google.com/ml-kit/vision/doc-scanner)
+- **Language:** [Kotlin](https://kotlinlang.org/)
+- **Architecture:** MVVM / Clean Architecture
+
+## 📸 Demo
+
 <p align="left">
-  <a title="simulator_image"><img src="examples/example_gif.gif" height="500" width="200"></a>
+  <a title="Document Scanner Demo">
+    <img src="examples/example_gif.gif" height="500" width="230">
+  </a>
 </p>
+
+## 🚀 Quick Start
 
 ## Step 1 - Add the library
 
@@ -151,15 +177,25 @@ fun Scanner(
 }
 ```
 
-## Versioning
+## 🔧 Versioning
 
-Target SDK version: 36 <br />
-Minimum SDK version: 29 <br />
-Kotlin version: 2.3.0 <br />
-Gradle version: 8.13.2 <br />
+- **Target SDK:** **36**
+- **Minimum SDK:** **29**
+- **Kotlin Version:** **2.3.10**
+- **Gradle Version:** **9.0.1**
 
-## References
+## 📚 References
 
-https://android-developers.googleblog.com/2024/02/ml-kit-document-scanner-api.html <br />
-https://developers.google.com/ml-kit/vision/doc-scanner <br />
-https://developers.google.com/ml-kit/vision/doc-scanner/android#kotlin <br />
+- [Official ML Kit Document Scanner Guide](https://developers.google.com/ml-kit/vision/doc-scanner/android)
+- [Android Developers Blog: Introducing Document Scanner API](https://android-developers.googleblog.com/2024/02/ml-kit-document-scanner-api.html)
+- [Document Scanner for Android (Kotlin/Java)](https://developers.google.com/ml-kit/vision/doc-scanner/android#kotlin)
+
+## ⭐ Stargazers
+
+If you enjoy this project, please give it a star!
+Check out all the stargazers
+here: [Stargazers on GitHub](https://github.com/NicosNicolaou16/MLDocumentScanner/stargazers)
+
+## 🙏 Support & Contributions
+
+This project is actively maintained. Feedback, bug reports, and feature requests are welcome! Please feel free to **open an issue** or submit a **pull request**.
