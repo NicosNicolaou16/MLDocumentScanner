@@ -22,6 +22,13 @@ This project demonstrates the implementation of the **Google ML Kit Document Sca
 *   **Compose Integration:** Uses `rememberLauncherForActivityResult` for a clean, reactive implementation in Jetpack Compose.
 *   **Intent Preview:** Automatically handles PDF URI results to open and preview documents in external viewers.
 
+## 🛠️ Tech Stack
+
+- **UI:** [Jetpack Compose](https://developer.android.com/develop/ui/compose)
+- **ML Engine:** [Google ML Kit Document Scanner](https://developers.google.com/ml-kit/vision/doc-scanner)
+- **Language:** [Kotlin](https://kotlinlang.org/)
+- **Architecture:** MVVM / Clean Architecture
+
 ## 📸 Demo
 
 <p align="left">
@@ -169,13 +176,6 @@ fun Scanner(
     )
 }
 ```
-
-## 🛠️ Tech Stack
-
-- **UI:** [Jetpack Compose](https://developer.android.com/develop/ui/compose)
-- **ML Engine:** [Google ML Kit Document Scanner](https://developers.google.com/ml-kit/vision/doc-scanner)
-- **Language:** [Kotlin](https://kotlinlang.org/)
-- **Architecture:** MVVM / Clean Architecture
 
 ## 🔧 Versioning
 
