@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.nicos.mldocumentscanner"
     buildToolsVersion = "36.0.0"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.nicos.mldocumentscanner"
